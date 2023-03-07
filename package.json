@@ -1,7 +1,7 @@
 {
   "name": "yosanoskey",
   "productName": "Yosanoskey",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "main.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "package": "electron-forge package",
     "make": "electron-forge make"
   },
-  "author": "",
+  "author": "goru",
   "license": "MIT",
   "devDependencies": {
     "@electron-forge/cli": "^6.0.5",
