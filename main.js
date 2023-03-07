@@ -3,9 +3,9 @@ const { app, BrowserWindow, shell } = require('electron')
 const createWindow = () => {
   // https://www.electronjs.org/ja/docs/latest/api/browser-window#new-browserwindowoptions
   const win = new BrowserWindow({
-    width: 800,
-    height: 600,
-    //useContentSize: true,
+    width: 700,
+    height: 900,
+    useContentSize: true,
     //alwaysOnTop: true,
     autoHideMenuBar: true,
     //opacity: 1.0,
