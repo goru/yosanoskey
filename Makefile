@@ -23,7 +23,8 @@ darwin: $(LIB)
 	npm run make -- --platform=darwin --arch=universal
 
 win32: $(LIB)
-	npm run make -- --platform=win32
+	npm run make -- --platform=win32 --arch=ia32
+	npm run make -- --platform=win32 --arch=x64
 
 docker-win32:
 	docker run -it --rm -e USERID=`id -u` -e GROUPID=`id -g` --mount type=bind,source="$(CURDIR)",target=/src ubuntu:22.04 /bin/bash -c -ex "\
