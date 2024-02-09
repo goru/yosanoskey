@@ -1,7 +1,7 @@
 {
   "name": "yosanoskey",
   "productName": "Yosanoskey",
-  "version": "0.0.1",
+  "version": "0.0.1.20240210",
   "description": "",
   "main": "main.js",
   "scripts": {
@@ -18,7 +18,7 @@
     "@electron-forge/maker-rpm": "^6.0.5",
     "@electron-forge/maker-squirrel": "^6.0.5",
     "@electron-forge/maker-zip": "^6.0.5",
-    "electron": "^23.1.2"
+    "electron": "^28.2.2"
   },
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0"
