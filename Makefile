@@ -19,6 +19,16 @@ clean:
 linux: $(LIB)
 	npm run make -- --platform=linux
 
+docker-linux:
+	docker run -it --rm -e USERID=`id -u` -e GROUPID=`id -g` --mount type=bind,source="$(CURDIR)",target=/src ubuntu:22.04 /bin/bash -c -ex "\
+		apt update;\
+		apt install -y curl git make zip;\
+		curl -fsSL https://deb.nodesource.com/setup_18.x | bash -;\
+		apt install -y nodejs;\
+		groupadd -g \$${GROUPID} user;\
+		useradd -u \$${USERID} -g \$${GROUPID} -m user;\
+		su - user -c 'cd /src; make linux'"
+
 darwin: $(LIB)
 	npm run make -- --platform=darwin --arch=universal
 
@@ -30,7 +40,7 @@ docker-win32:
 	docker run -it --rm -e USERID=`id -u` -e GROUPID=`id -g` --mount type=bind,source="$(CURDIR)",target=/src ubuntu:22.04 /bin/bash -c -ex "\
 		apt update;\
 		apt install -y curl git make wine zip;\
-		curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -;\
+		curl -fsSL https://deb.nodesource.com/setup_18.x | bash -;\
 		apt install -y nodejs;\
 		groupadd -g \$${GROUPID} user;\
 		useradd -u \$${USERID} -g \$${GROUPID} -m user;\
