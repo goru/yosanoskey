@@ -1,7 +1,7 @@
 {
   "name": "yosanoskey",
   "productName": "Yosanoskey",
-  "version": "0.0.1.20240210",
+  "version": "0.0.1.20260507",
   "description": "",
   "main": "main.js",
   "scripts": {
@@ -13,14 +13,14 @@
   "author": "goru",
   "license": "MIT",
   "devDependencies": {
-    "@electron-forge/cli": "^6.0.5",
-    "@electron-forge/maker-deb": "^6.0.5",
-    "@electron-forge/maker-rpm": "^6.0.5",
-    "@electron-forge/maker-squirrel": "^6.0.5",
-    "@electron-forge/maker-zip": "^6.0.5",
-    "electron": "^28.2.2"
+    "@electron-forge/cli": "^7.11.1",
+    "@electron-forge/maker-deb": "^7.11.1",
+    "@electron-forge/maker-rpm": "^7.11.1",
+    "@electron-forge/maker-squirrel": "^7.11.1",
+    "@electron-forge/maker-zip": "^7.11.1",
+    "electron": "^42.0.0"
   },
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.0"
+    "electron-squirrel-startup": "^1.0.1"
   }
 }
