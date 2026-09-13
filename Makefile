@@ -32,11 +32,10 @@ docker-linux:
 darwin: $(LIB)
 	npm run make -- --platform=darwin --arch=universal
 
-win32: $(LIB)
-	npm run make -- --platform=win32 --arch=ia32
+windows: $(LIB)
 	npm run make -- --platform=win32 --arch=x64
 
-docker-win32:
+docker-windows:
 	docker run -it --rm -e USERID=`id -u` -e GROUPID=`id -g` --mount type=bind,source="$(CURDIR)",target=/src ubuntu:22.04 /bin/bash -c -ex "\
 		apt update;\
 		apt install -y curl git make wine zip;\
@@ -44,4 +43,4 @@ docker-win32:
 		apt install -y nodejs;\
 		groupadd -g \$${GROUPID} user;\
 		useradd -u \$${USERID} -g \$${GROUPID} -m user;\
-		su - user -c 'cd /src; make win32'"
+		su - user -c 'cd /src; make windows'"
