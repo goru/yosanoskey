@@ -3,7 +3,7 @@
   "productName": "Yosanoskey",
   "version": "0.0.2.20260913",
   "description": "",
-  "main": "main.js",
+  "main": "src/index.js",
   "private": true,
   "scripts": {
     "start": "electron-forge start",

@@ -1,6 +1,6 @@
 ARG = 
 LIB = node_modules/.package-lock.json package-lock.json
-SRC = forge.config.js index.html main.js preload.js
+SRC = forge.config.js src/index.html src/index.js src/preload.js
 
 all: out
 
