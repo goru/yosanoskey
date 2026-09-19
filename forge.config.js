@@ -4,6 +4,7 @@ const { FuseV1Options, FuseVersion } = require('@electron/fuses');
 module.exports = {
   packagerConfig: {
     asar: true,
+    executableName: 'yosanoskey',
     // Ad-hoc sign macOS builds so Gatekeeper doesn't refuse to launch them
     // once the quarantine attribute is set (e.g. downloaded via a browser).
     // No Developer ID certificate is available in CI, so `identity: '-'`
