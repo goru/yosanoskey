@@ -1,4 +1,13 @@
-const { ipcRenderer } = require('electron')
+const { contextBridge, ipcRenderer } = require('electron')
+
+// Only expose this to our own local settings page, not to the wrapped site.
+if (location.protocol === 'file:') {
+  contextBridge.exposeInMainWorld('settingsAPI', {
+    getSettings: () => ipcRenderer.invoke('get-settings'),
+    setSettings: (updates) => ipcRenderer.invoke('set-settings', updates),
+    close: () => ipcRenderer.send('close-settings'),
+  })
+}
 
 let directions = []
 
