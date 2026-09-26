@@ -1,7 +1,7 @@
 {
   "name": "yosanoskey",
   "productName": "Yosanoskey",
-  "version": "0.0.3.20260926",
+  "version": "0.0.4.20260926",
   "description": "",
   "main": "src/index.js",
   "private": true,
