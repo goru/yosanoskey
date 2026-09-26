@@ -11,3 +11,13 @@ window.settingsAPI.getSettings().then((settings) => {
 themeSelect.addEventListener('change', () => {
   window.settingsAPI.setSettings({ theme: themeSelect.value });
 });
+
+const smoothScrollingCheckbox = document.getElementById('smoothScrolling');
+
+window.settingsAPI.getSettings().then((settings) => {
+  smoothScrollingCheckbox.checked = settings.smoothScrolling;
+});
+
+smoothScrollingCheckbox.addEventListener('change', () => {
+  window.settingsAPI.setSettings({ smoothScrolling: smoothScrollingCheckbox.checked });
+});

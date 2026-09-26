@@ -5,7 +5,7 @@ const fs = require('fs')
 const REMOTE_URL = 'https://misskey.io/'
 
 const SETTINGS_PATH = path.join(app.getPath('userData'), 'settings.json')
-const DEFAULT_SETTINGS = { theme: 'system' }
+const DEFAULT_SETTINGS = { theme: 'system', smoothScrolling: true }
 
 const loadSettings = () => {
   let stored = {}
@@ -15,6 +15,13 @@ const loadSettings = () => {
     stored = {}
   }
   return { ...DEFAULT_SETTINGS, ...stored }
+}
+
+// Chromium command-line switches only take effect for the process they're
+// set on before app.whenReady(), so this can't be toggled live -- changing
+// it in Settings takes effect on the next launch.
+if (!loadSettings().smoothScrolling) {
+  app.commandLine.appendSwitch('disable-smooth-scrolling')
 }
 
 const saveSettings = (settings) => {
